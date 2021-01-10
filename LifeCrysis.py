@@ -25,13 +25,13 @@ def get_wake_hours(age):
     return hours_waking
 
 
-def hours_played_percentage(hours, age_in_hours):
+def life_hours_percentage(hours, age_in_hours):
 
     percentage_of_life = (hours / age_in_hours) * 100
     return percentage_of_life
 
 
-def waking_hours_played_percentage(hours, age_in_hours):
+def life_waking_hours_percentage(hours, age_in_hours):
 
     hours_awake = get_wake_hours(age_in_hours)
     percentage_of_life = (hours/hours_awake)*100
@@ -58,8 +58,8 @@ activity_hours_played = float(input("Enter activity hours: "))
 #activity_hours_played = 1
 
 
-percent_since_start = hours_played_percentage(activity_hours_played, hours_since_start)
-wake_hours = waking_hours_played_percentage(activity_hours_played, hours_since_start)
+percent_since_start = life_hours_percentage(activity_hours_played, hours_since_start)
+wake_hours = life_waking_hours_percentage(activity_hours_played, hours_since_start)
 
 print("You have done this activity for :", percent_since_start, "% of since the start date")
 print("You have done this activity for :", wake_hours, "% of your waking hours since start date")
@@ -68,8 +68,8 @@ dob = input('Enter your birthday in dd/mm/yyyy format: ')
 age_hours = get_age_in_hours(dob)
 
 
-total_life_result = hours_played_percentage(activity_hours_played, age_hours)
-wake_hours = waking_hours_played_percentage(activity_hours_played, age_hours)
+total_life_result = life_hours_percentage(activity_hours_played, age_hours)
+wake_hours = life_waking_hours_percentage(activity_hours_played, age_hours)
 
 print("You have done this activity for :", total_life_result, "% of your life")
 print("You have done this activity for :", wake_hours, "% of your waking life")
